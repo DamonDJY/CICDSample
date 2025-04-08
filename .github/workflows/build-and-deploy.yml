@@ -2,9 +2,9 @@ name: Build and Deploy
 
 on:
   push:
-    branches: [main]
+    branches: [dev]
   pull_request:
-    branches: [main]
+    branches: [dev]
 
 jobs:
   build:
@@ -29,18 +29,18 @@ jobs:
         env:
           DATABASE_CONNECTION_STRING: ${{ secrets.DATABASE_CONNECTION_STRING }}
 
-      - name: Publish
-        run: dotnet publish src/Endpoint/Endpoint.csproj -c Release -o publish
+      # - name: Publish
+      #   run: dotnet publish src/Endpoint/Endpoint.csproj -c Release -o publish
 
-      # 以下步骤取决于你的部署目标（Azure, AWS, GCP等）
-      # 这是一个Azure Web App的示例
-      - name: Deploy to Azure Web App
-        if: github.ref == 'refs/heads/main' # 只在main分支上部署
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: "your-app-name"
-          slot-name: "production"
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: "./publish"
-        env:
-          DATABASE_CONNECTION_STRING: ${{ secrets.DATABASE_CONNECTION_STRING }}
+      # # 以下步骤取决于你的部署目标（Azure, AWS, GCP等）
+      # # 这是一个Azure Web App的示例
+      # - name: Deploy to Azure Web App
+      #   if: github.ref == 'refs/heads/main' # 只在main分支上部署
+      #   uses: azure/webapps-deploy@v2
+      #   with:
+      #     app-name: "your-app-name"
+      #     slot-name: "production"
+      #     publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+      #     package: "./publish"
+      #   env:
+      #     DATABASE_CONNECTION_STRING: ${{ secrets.DATABASE_CONNECTION_STRING }}
