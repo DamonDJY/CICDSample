@@ -1,0 +1,43 @@
+# Auto detect text files and normalize line endings
+* text=auto
+
+# C# files
+*.cs text diff=csharp
+
+# Solution and project files
+*.sln text
+*.csproj text
+*.vbproj text
+*.fsproj text
+*.dbproj text
+
+# Scripts
+*.sh text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text
+
+# Serialization
+*.json text
+*.xml text
+*.yaml text
+*.yml text
+
+# Web
+*.htm text
+*.html text
+*.css text
+*.js text
+*.ts text
+*.map text
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.dll binary
+*.exe binary
