@@ -1,0 +1,10 @@
+{
+  "parallelizeAssembly": true,
+  "diagnosticMessages": true,
+  "longRunningTestWarningTime": 60,
+  "maxParallelThreads": 4,
+  "testCaseOrder": "Alphabetical",
+  "testDiscovery": {
+    "enabled": true
+  }
+}

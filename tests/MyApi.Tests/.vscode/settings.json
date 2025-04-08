@@ -1,0 +1,4 @@
+{
+    "testExplorer.testFramework": "xunit",
+    "testExplorer.testFiles": "**/*.Tests.cs"
+}
